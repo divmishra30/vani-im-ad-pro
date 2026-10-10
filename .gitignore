@@ -1,0 +1,8 @@
+.env
+__pycache__/
+data/vani.db
+data/gmc/
+demo/out/*
+!demo/out/vani-demo.mp4
+!demo/out/vani-demo.srt
+!demo/out/transcript.md

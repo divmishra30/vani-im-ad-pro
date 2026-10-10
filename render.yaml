@@ -1,0 +1,20 @@
+# Render blueprint: New + > Blueprint > pick this repo. Set the secret env vars in the Render dashboard.
+services:
+  - type: web
+    name: vani-im-ad-pro
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn server:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: SARVAM_API_KEY
+        sync: false
+      - key: TOOLS_TOKEN
+        sync: false
+      - key: DASHBOARD_PASSWORD
+        sync: false
+      - key: PUBLIC_URL
+        sync: false
